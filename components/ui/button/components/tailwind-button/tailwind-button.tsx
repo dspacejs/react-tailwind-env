@@ -1,5 +1,8 @@
 import React from 'react';
 import '@shohamgilad/tailwind-test.styles.tailwind-styles/dist/styles.css';
+import tw, { styled } from "twin.macro";
+
+const Button = styled.button(() => [tw`bg-red rounded-md p-2`]);
 
 export type TailwindButtonProps = {
   /**
@@ -11,8 +14,8 @@ export type TailwindButtonProps = {
 
 export function TailwindButton({ text, className }: TailwindButtonProps) {
   return (
-    <button className={className}>
+    <Button className={className}>
       {text}
-    </button>
+    </Button>
   );
 }

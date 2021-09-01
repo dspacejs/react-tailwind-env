@@ -1,0 +1,27 @@
+---
+description: "Notification utilities."
+labels: ["utilities", "notification"]
+---
+
+import * as notificationUtils from "./utils";
+
+## Component usage
+
+```js
+const { NotificationProvider, useNotificationQueue } = notificationUtils;
+
+// Get notification queue
+const queue = useNotificationQueue();
+
+queue.add("GET_PATIENTS_ERROR", {
+  type: "error",
+  icon: "Error",
+  title: "Failed to load patients",
+  description: "Something went wrong whilst fetching the patients.",
+});
+
+// Wrap app with notification provider
+<NotificationProvider>
+  app
+</NotificationProvider>
+```

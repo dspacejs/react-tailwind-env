@@ -15,6 +15,12 @@
         "mainFile": "index.ts",
         "rootDir": "components/envs/tailwind-bit"
     },
+    "providers/apollo": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "tailwind-test/providers/apollo"
+    },
     "styles/tailwind-styles": {
         "scope": "shohamgilad.tailwind-test",
         "version": "0.0.1",

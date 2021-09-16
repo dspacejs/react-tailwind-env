@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
- **/{
+ **/ {
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -38,6 +38,7 @@
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "dependencies": {
+        "@auth0/auth0-react": "1.7.0",
         "@emotion/react": "11.4.0",
         "@emotion/styled": "11.3.0",
         "@teambit/webpack.modules.style-regexps": "0.0.31",
@@ -50,14 +51,14 @@
         "twin.macro": "2.6.2"
       },
       "peerDependencies": {
+        "@apollo/client": "3.4.11",
+        "graphql": "15.5.3",
         "react": "17.0.2",
         "react-dom": "17.0.2"
       }
     },
     "packageManagerArgs": [],
-    "devFilePatterns": [
-      "**/*.spec.ts"
-    ],
+    "devFilePatterns": ["**/*.spec.ts"],
     "strictPeerDependencies": true,
     "installFromBitDevRegistry": true,
     "savePrefix": ""
@@ -80,7 +81,7 @@
     "components/envs": {
       "teambit.harmony/aspect": {}
     },
-    "components/ui": {
+    "{components/ui}, {providers/**}": {
       "shohamgilad.tailwind-test/envs/tailwind-react": {}
     },
     "components/tailwind-styles": {

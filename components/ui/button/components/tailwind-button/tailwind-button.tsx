@@ -1,6 +1,7 @@
 import React from 'react';
 import '@shohamgilad/tailwind-test.styles.tailwind-styles/dist/styles.css';
-import tw, { styled } from "twin.macro";
+import tw from "twin.macro";
+import styled from "@emotion/styled";
 
 const Button = styled.button(() => [tw`bg-red rounded-md p-2`]);
 

@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
- **/ {
+ **/{
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -39,11 +39,28 @@
     "policy": {
       "dependencies": {
         "@auth0/auth0-react": "1.7.0",
-        "@emotion/react": "11.4.0",
+        "@babel/plugin-proposal-class-properties": "7.14.5",
+        "@babel/plugin-proposal-decorators": "7.15.4",
+        "@babel/plugin-proposal-export-default-from": "7.14.5",
+        "@babel/plugin-proposal-export-namespace-from": "7.14.5",
+        "@babel/plugin-proposal-object-rest-spread": "7.15.6",
+        "@babel/plugin-transform-modules-commonjs": "7.15.4",
+        "@babel/plugin-transform-runtime": "7.15.0",
+        "@babel/preset-env": "7.15.6",
+        "@babel/preset-react": "7.14.5",
+        "@babel/preset-typescript": "7.15.0",
+        "@emotion/babel-plugin": "11.3.0",
+        "@emotion/react": "11.4.1",
         "@emotion/styled": "11.3.0",
+        "@teambit/babel": "0.0.510",
+        "@teambit/envs": "0.0.510",
+        "@teambit/react": "0.0.510",
         "@teambit/webpack.modules.style-regexps": "0.0.31",
         "@testing-library/react": "11.2.6",
         "autoprefixer": "10.2.5",
+        "babel-jest": "27.2.3",
+        "babel-plugin-macros": "3.1.0",
+        "babel-plugin-transform-typescript-metadata": "0.3.2",
         "postcss": "8.2.13",
         "postcss-loader": "5.2.0",
         "react-notification-provider": "0.6.0",
@@ -58,7 +75,9 @@
       }
     },
     "packageManagerArgs": [],
-    "devFilePatterns": ["**/*.spec.ts"],
+    "devFilePatterns": [
+      "**/*.spec.ts"
+    ],
     "strictPeerDependencies": true,
     "installFromBitDevRegistry": true,
     "savePrefix": ""
@@ -86,6 +105,30 @@
     },
     "components/tailwind-styles": {
       "teambit.react/react": {}
+    },
+    "{components/envs/tailwind-bit}": {
+      "teambit.dependencies/dependency-resolver": {
+        "policy": {
+          "dependencies": {
+            "@babel/plugin-proposal-class-properties": "7.14.5",
+            "@babel/plugin-proposal-decorators": "7.15.4",
+            "@babel/plugin-proposal-export-default-from": "7.14.5",
+            "@babel/plugin-proposal-export-namespace-from": "7.14.5",
+            "@babel/plugin-proposal-object-rest-spread": "7.15.6",
+            "@babel/plugin-transform-modules-commonjs": "7.15.4",
+            "@babel/plugin-transform-runtime": "7.15.0",
+            "@babel/preset-env": "7.15.6",
+            "@babel/preset-react": "7.14.5",
+            "@babel/preset-typescript": "7.15.0",
+            "@emotion/babel-plugin": "11.3.0",
+            "@emotion/react": "11.4.0",
+            "@emotion/styled": "11.3.0",
+            "babel-jest": "27.2.3",
+            "babel-plugin-macros": "3.1.0",
+            "babel-plugin-transform-typescript-metadata": "0.3.2"
+          }
+        }
+      }
     }
   }
 }

@@ -3,7 +3,7 @@ import '@shohamgilad/tailwind-test.styles.tailwind-styles/dist/styles.css';
 import tw from "twin.macro";
 import styled from "@emotion/styled";
 
-const Button = styled.button(() => [tw`bg-red rounded-md p-2`]);
+const Button = styled.button(() => [tw`bg-red-50 rounded-md p-2`]);
 
 export type TailwindButtonProps = {
   /**

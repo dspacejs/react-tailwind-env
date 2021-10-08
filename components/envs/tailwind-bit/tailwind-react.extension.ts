@@ -20,6 +20,11 @@ export class TailwindReactExtension {
     });
 
     const TailwindReactEnv = react.compose([
+      react.overrideDependencies({
+        "dependencies": {
+          "@emotion/react": "11.4.1"
+        }
+      }),
       react.overrideCompiler(babelCompiler),
       react.overrideCompilerTasks([babelCompiler.createTask()]),
       react.useWebpack({

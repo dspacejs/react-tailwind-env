@@ -2,16 +2,16 @@ const { transform } = require("@babel/core");
 
 const presets = [
   [
-    require("@babel/preset-react").default,
+    require("@babel/preset-react"),
     {
       runtime: "automatic",
       importSource: "@emotion/react",
     },
   ],
-  require("@babel/preset-typescript").default,
-  require("babel-preset-jest").default,
+  require("@babel/preset-typescript"),
+  require("babel-preset-jest"),
   [
-    require("@babel/preset-env").default,
+    require("@babel/preset-env"),
     {
       targets: {
         node: 12,
@@ -23,12 +23,12 @@ const presets = [
 ];
 const plugins = [
   [require("babel-plugin-macros")],
-  [require("@babel/plugin-transform-modules-commonjs").default],
-  [require("babel-plugin-transform-typescript-metadata").default],
-  [require("@babel/plugin-proposal-decorators").default, { legacy: true }],
-  [require("@babel/plugin-transform-runtime").default],
-  [require("@babel/plugin-proposal-object-rest-spread").default],
-  [require("@babel/plugin-proposal-class-properties").default],
+  [require("@babel/plugin-transform-modules-commonjs")],
+  [require("babel-plugin-transform-typescript-metadata")],
+  [require("@babel/plugin-proposal-decorators"), { legacy: true }],
+  [require("@babel/plugin-transform-runtime")],
+  [require("@babel/plugin-proposal-object-rest-spread")],
+  [require("@babel/plugin-proposal-class-properties")],
 ];
 
 module.exports = {

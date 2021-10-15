@@ -100,7 +100,7 @@
        **/
       // "teambit.react/react": { }
     },
-    "components/envs": {
+    "{components/envs}, {bit-preview}": {
       "teambit.harmony/aspect": {}
     },
     "{components/ui}, {providers/**}": {

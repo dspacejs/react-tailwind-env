@@ -9,6 +9,12 @@
  */
 
 {
+    "bit-preview": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "tailwind-test/bit-preview"
+    },
     "envs/tailwind-react": {
         "scope": "shohamgilad.tailwind-test",
         "version": "0.0.1",

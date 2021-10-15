@@ -1,10 +1,16 @@
-import { WebpackConfigTransformer, WebpackConfigMutator } from "@teambit/webpack";
+import {
+  WebpackConfigTransformer,
+  WebpackConfigMutator,
+} from "@teambit/webpack";
 import * as stylesRegexps from "@teambit/webpack.modules.style-regexps";
 import tailwindcssPlugin from "tailwindcss";
-import { tailwindConfig } from "@cannabitrx/tailwind.config";
+import { tailwindConfig } from "@shohamgilad/tailwind-test.styles.tailwind-styles";
 
 function findCssRuleByCssNoModuleRegexp(rules: any[] = []) {
-  return rules.find((rule) => rule.test.toString() === stylesRegexps.cssNoModulesRegex.toString());
+  return rules.find(
+    (rule) =>
+      rule.test.toString() === stylesRegexps.cssNoModulesRegex.toString()
+  );
 }
 
 function findOneOfRuleInPreviewConfig(rules: any[] = []) {
@@ -21,24 +27,28 @@ function addTailwindConfig(config: WebpackConfigMutator): WebpackConfigMutator {
   const cssRule = findCssRuleByCssNoModuleRegexp(oneOfRule);
   if (!cssRule) {
     throw new Error(
-      "css rule not found. this probably means the webpack config of bit itself has changed",
+      "css rule not found. this probably means the webpack config of bit itself has changed"
     );
   }
   // we already have a postcss loader
   const postcssLoader = findPostcssLoaderInRule(cssRule.use);
   if (!postcssLoader) {
     throw new Error(
-      "postcss loader not found. this probably means the webpack config of bit itself has changed",
+      "postcss loader not found. this probably means the webpack config of bit itself has changed"
     );
   }
   /* eslint-disable-next-line */
   // @ts-ignore
-  postcssLoader.options.postcssOptions.plugins.unshift(tailwindcssPlugin(tailwindConfig));
+  postcssLoader.options.postcssOptions.plugins.unshift(
+    tailwindcssPlugin(tailwindConfig)
+  );
   return config;
 }
 
-export const previewConfig: WebpackConfigTransformer = (config: WebpackConfigMutator) =>
-  addTailwindConfig(config);
+export const previewConfig: WebpackConfigTransformer = (
+  config: WebpackConfigMutator
+) => addTailwindConfig(config);
 
-export const devServerConfig: WebpackConfigTransformer = (config: WebpackConfigMutator) =>
-  addTailwindConfig(config);
+export const devServerConfig: WebpackConfigTransformer = (
+  config: WebpackConfigMutator
+) => addTailwindConfig(config);
